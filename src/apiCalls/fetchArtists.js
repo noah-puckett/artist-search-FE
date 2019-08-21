@@ -23,3 +23,15 @@ export const getReleases = (artistId) => {
         });
 };
 
+export const getRecordings = (releaseId) => {
+
+    return fetch(`http://musicbrainz.org/ws/2/recording?release=${releaseId}&fmt=json`, {
+    })
+        .then(res => ([res.ok, res.json()]))
+        .then(([ok, json]) => {
+            if(!ok) throw 'Unable to get release recordings';
+
+            return json;
+        });
+};
+
