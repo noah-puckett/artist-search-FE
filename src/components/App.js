@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SearchContainer from './stateful/SearchContainer';
-import ReleaseList from './stateless/artistDetail/ReleaseList';
 import ArtistDetailContainer from './stateful/ArtistDetailContainer';
+import AlbumDetailContainer from './stateful/AlbumDetailContainer';
+import SongDetailContainer from './stateful/SongDetailContainer';
 
 //IF YOU'RE GONNA TRY TO MATCH JUST A '/', YOU NEED IT TO BE EXACT OTHERWISE IT'LL RENDER / AND /ABOUT OR WHATEVER
 //IF YOU WANT TO RENDER A HEADER OR LIKE, PERMANENT SITE THING, RENDER IT INSIDE THE ROUTER BUT WITHOUT A PATH
@@ -23,7 +24,11 @@ export default function App() {
         <Router>
             <Switch>
                 <Route exact path='/' component={SearchContainer} />
-                <Route path='/:artistname/:id/releases' component={ArtistDetailContainer} /> 
+                <Route path='/:artistname/:id/albums' component={ArtistDetailContainer} /> 
+                <Route path='/:artistname/:albumtitle/:id/songs' component={AlbumDetailContainer} /> 
+                <Route path='/:artistname/:albumtitle/:id/songs/:songtitle' component={SongDetailContainer} /> 
+
+                {/* the next route will be to lyrics */}
 
             </Switch>
         </Router>

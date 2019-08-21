@@ -1,41 +1,40 @@
 import React, { Component } from 'react';
-import { getReleases } from '../../apiCalls/fetchArtists';
-import ReleaseList from '../stateless/artistDetail/ReleaseList';
-
+import { getAlbums } from '../../apiCalls/apiCalls';
+import AlbumList from '../stateless/artistDetail/AlbumList';
 
 export default class ArtistDetailContainer extends Component {
-
+    
     state = {
-        //this is for the artist id, dunno how to ... render it correctly
+        // eslint-disable-next-line react/prop-types
         artist: this.props.match.params.id,
-        releases: [],
+        albums: [],
     }
-
-    fetchReleases = () => {
-        getReleases(this.state.artist)
+    
+    fetchAlbums = () => {
+        getAlbums(this.state.artist)
             .then(res => {
-                this.setState({ releases: res.releases });
+                this.setState({ albums: res.releases });
             });
-    }
-
+    }  
+    
     componentDidMount() {
-        this.fetchReleases();
+        this.fetchAlbums();
     }
-
+    
     componentDidUpdate(prevProps, prevState) {
         if(prevState.artist !== this.state.artist) {
-            this.fetchReleases();
+            this.fetchAlbums();
         }
     }
 
     onChange = ({ target }) => {
         this.setState({ [target.name]: target.value });
     }
-
+    
     render() {
         return (
             <>
-            <ReleaseList releases={this.state.releases} />
+            <AlbumList artist={this.state.artist} albums={this.state.albums} />
             </>
         );
     }

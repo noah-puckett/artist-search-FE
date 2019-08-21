@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getArtists } from '../../apiCalls/fetchArtists';
+import { getArtists } from '../../apiCalls/apiCalls';
 import ArtistList from '../stateless/search/ArtistList';
 import SearchBar from '../stateless/search/SearchBar';
 
