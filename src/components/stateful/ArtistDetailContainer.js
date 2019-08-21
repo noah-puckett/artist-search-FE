@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import { getReleases } from '../../apiCalls/fetchArtists';
 import ReleaseList from '../stateless/artistDetail/ReleaseList';
 
+
 export default class ArtistDetailContainer extends Component {
 
     state = {
         //this is for the artist id, dunno how to ... render it correctly
-        artist: '82eb8936-7bf6-4577-8320-a2639465206d',
+        artist: this.props.match.params.id,
         releases: [],
     }
 
