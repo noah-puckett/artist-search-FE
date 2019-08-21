@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 
 function Artist({ name }) {
     return (<>
-    {/* TODO: turn this into a react uhhh router link thing */}
+        {/* <Link to={`/${id}/${name}`} /> */}
         <h3>{name}</h3>
     </>
     );
 }
 
 Artist.propTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    // id: PropTypes.string.isRequired
 };
 
 export default Artist;

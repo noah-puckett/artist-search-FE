@@ -1,10 +1,11 @@
 import React from 'react';
-import SearchContainer from './stateful/SearchContainer';
+import ArtistDetailContainer from './stateful/ArtistDetailContainer';
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+
 
 export default function App() {
-    return (<>
-      <SearchContainer />
-		</>
-    );
+    return (
+        <ArtistDetailContainer /> 
+    ); 
 }
   

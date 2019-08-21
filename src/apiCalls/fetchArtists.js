@@ -10,3 +10,16 @@ export const getArtists = (search) => {
             return json;
         });
 };
+
+export const getReleases = (artistId) => {
+
+    return fetch(`http://musicbrainz.org/ws/2/release?artist=${artistId}&fmt=json`, {
+    })
+        .then(res => ([res.ok, res.json()]))
+        .then(([ok, json]) => {
+            if(!ok) throw 'Unable to get artist releases';
+
+            return json;
+        });
+};
+
