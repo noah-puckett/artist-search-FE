@@ -6,15 +6,15 @@ export default class SongDetailContainer extends Component {
 
     state = {
         //release is old-person speech for "album"
-        songTitle: this.props.match.params.id,
-        // songArtist:
+        songTitle: this.props.match.params.songtitle,
+        songArtist: this.props.match.params.artistname,
         lyrics: '',
     }
 
     fetchLyrics = () => {
-        getLyrics(this.state.artist)
+        getLyrics(this.state.songArtist, this.state.songTitle)
             .then(res => {
-                this.setState({ lyrics: res });
+                this.setState({ lyrics: res.lyrics });
             });
     }
 
@@ -35,7 +35,10 @@ export default class SongDetailContainer extends Component {
     render() {
         return (
             <>
-            <Lyrics lyrics={this.state.lyrics} />
+            <Lyrics 
+                artist={this.state.songArtist} 
+                title={this.state.songTitle}
+                lyrics={this.state.lyrics} />
             </>
         );
     }

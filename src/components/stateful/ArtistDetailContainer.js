@@ -32,9 +32,10 @@ export default class ArtistDetailContainer extends Component {
     }
     
     render() {
+        // console.log(this.props.match.params.artistname)
         return (
             <>
-            <AlbumList artist={this.state.artist} albums={this.state.albums} />
+            <AlbumList artist={this.props.match.params.artistname} albums={this.state.albums} />
             </>
         );
     }

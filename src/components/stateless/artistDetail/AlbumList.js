@@ -9,7 +9,7 @@ function AlbumList({ albums, artist }) {
         const coverArt = album['cover-art-archive'].count ? `http://coverartarchive.org/release/${album.id}/front` : image; 
         return (
             <li style={{ listStyleType: 'none' }} key={album.id}>
-                <Link to={`/${artist.name}/${album.title}/${album.id}/songs`}>
+                <Link to={`/${artist}/${album.title}/${album.id}/songs`}>
                     <Album title={album.title}/>
                     <img style={{ height: 300 }} src={coverArt} />
                 </Link>
