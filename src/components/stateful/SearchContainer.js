@@ -7,7 +7,7 @@ export default class SearchContainer extends Component {
 
     state = {
         artists: [],
-        searchBoxInput: 'all',
+        searchBoxInput: 'a',
     }
 
     fetchArtists = () => {

@@ -9,7 +9,7 @@ function ReleaseList({ releases }) {
             // TODO: fix key to be artist._id
             <li style={{ listStyleType: 'none' }} key={release.id}>
                 <Release title={release.title}/>
-                <img style={{ height: 300 }} src={`http://coverartarchive.org/release/${release.id}/front`} onError={(e) => {e.target.src = 'src/components/stateless/artistDetail/photo-unavailable.png';}} />
+                <img style={{ height: 300 }} src={`http://coverartarchive.org/release/${release.id}/front`} />
             </li>
         );
     });
@@ -21,3 +21,6 @@ ReleaseList.propTypes = {
 };
 
 export default ReleaseList;
+
+
+// onError={(e) => {e.target.src = 'src/components/stateless/artistDetail/photo-unavailable.png';}}
