@@ -5,7 +5,7 @@ function Lyrics({ lyrics, artist, title }) {
     return (<>
         <h1>{artist}</h1>
         <h3>{title}</h3>
-        <p>{lyrics}</p>
+        <p>{ lyrics ? lyrics : 'No lyrics are currently uploaded for this song, sorry!'}</p>
     </>
     );
 }

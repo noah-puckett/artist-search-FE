@@ -4,6 +4,7 @@ import SongList from '../stateless/songsDetail/SongList';
 
 
 export default class AlbumDetailContainer extends Component {
+
     state = {
         // eslint-disable-next-line react/prop-types
         album: this.props.match.params.id,

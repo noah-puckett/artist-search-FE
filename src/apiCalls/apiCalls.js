@@ -1,21 +1,19 @@
 //this gets an array of artists
-export const getArtists = (search) => {
+export const getArtists = (artists, page) => {
 
-    return fetch(`http://musicbrainz.org/ws/2/artist?query=${search}&fmt=json&limit=25`, {
+    return fetch(`http://musicbrainz.org/ws/2/artist?query=${artists}&fmt=json&limit=10&offset=${(page - 1) * 10}`, {
     })
         .then(res => ([res.ok, res.json()]))
         .then(([ok, json]) => {
             if(!ok) throw 'Unable to get artists';
 
-            //artists is an object with an array of artist objects
             return json;
         });
 };
 
 //this gets an array of ALBUMS
-export const getAlbums = (artistId) => {
-
-    return fetch(`http://musicbrainz.org/ws/2/release?artist=${artistId}&fmt=json`, {
+export const getAlbums = (artistId, page) => {
+    return fetch(`http://musicbrainz.org/ws/2/release?artist=${artistId}&fmt=json&limit=10&offset=${(page - 1) * 10}`, {
     })
         .then(res => ([res.ok, res.json()]))
         .then(([ok, json]) => {
