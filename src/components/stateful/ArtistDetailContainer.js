@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { getAlbums } from '../../apiCalls/apiCalls';
 import AlbumList from '../stateless/artistDetail/AlbumList';
+import PropTypes from 'prop-types';
 
 export default class ArtistDetailContainer extends Component {
+
+    static propTypes = {
+        match: PropTypes.object.isRequired
+    }
     
     state = {
         albums: [],

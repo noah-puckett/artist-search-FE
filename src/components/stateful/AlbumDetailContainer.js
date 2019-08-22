@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { getSongs } from '../../apiCalls/apiCalls';
 import SongList from '../stateless/songsDetail/SongList';
+import PropTypes from 'prop-types';
 
 
 export default class AlbumDetailContainer extends Component {
 
+    static propTypes = {
+        match: PropTypes.object.isRequired,
+    }
+
     state = {
         // eslint-disable-next-line react/prop-types
-        album: this.props.match.params.id,
-        artist: this.props.match.params.artistname,
         songs: [],
     }
     

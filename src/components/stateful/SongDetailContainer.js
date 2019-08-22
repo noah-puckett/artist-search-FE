@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import { getLyrics } from '../../apiCalls/apiCalls';
 import Lyrics from '../stateless/songsDetail/Lyrics';
+import PropTypes from 'prop-types';
+
 
 export default class SongDetailContainer extends Component {
+
+    static propTypes = {
+        match: PropTypes.object.isRequired
+    }
 
     state = {
         //release is old-person speech for "album"
