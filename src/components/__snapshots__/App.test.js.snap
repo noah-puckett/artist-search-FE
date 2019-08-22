@@ -1,7 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component renders App 1`] = `
-<h1>
-  Hello World
-</h1>
+<BrowserRouter>
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      path="/:artistname/:id/albums"
+    />
+    <Route
+      component={[Function]}
+      path="/:artistname/:albumtitle/:id/songs"
+    />
+    <Route
+      component={[Function]}
+      path="/:artistname/:songtitle"
+    />
+  </Switch>
+</BrowserRouter>
 `;

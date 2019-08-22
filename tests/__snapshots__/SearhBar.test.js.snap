@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar component renders SearchBar 1`] = `
+<Fragment>
+  <input
+    name="searchBoxInput"
+    onChange={[Function]}
+    value="hello"
+  />
+</Fragment>
+`;
