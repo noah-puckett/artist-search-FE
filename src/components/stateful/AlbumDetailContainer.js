@@ -11,12 +11,11 @@ export default class AlbumDetailContainer extends Component {
     }
 
     state = {
-        // eslint-disable-next-line react/prop-types
         songs: [],
     }
     
     fetchSongs = () => {
-        getSongs(this.state.album)
+        getSongs(this.props.match.params.id)
             .then(res => {
                 this.setState({ songs: res.recordings });
             });
@@ -37,6 +36,7 @@ export default class AlbumDetailContainer extends Component {
     }
 
     render() {
+        // console.log(this.props.match.params)
         return (
             <>
             <SongList artist={this.props.match.params.artistname} songs={this.state.songs} />

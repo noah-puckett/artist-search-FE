@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 function Artist({ name }) {
     return (<>
-        {/* <Link to={`/${id}/${name}`} /> */}
         <h3>{name}</h3>
     </>
     );
@@ -12,7 +11,6 @@ function Artist({ name }) {
 
 Artist.propTypes = {
     name: PropTypes.string.isRequired,
-    // id: PropTypes.string.isRequired
 };
 
 export default Artist;
